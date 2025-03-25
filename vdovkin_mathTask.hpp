@@ -8,7 +8,7 @@
 using namespace std;
 
 inline bool UserInput(string input) {
-  if (input.empty())
+  if (input.empty() || input[0] == '-')
     return false;
   try {
     int number = stoi(input);
