@@ -10,8 +10,10 @@ using namespace std;
 inline bool UserInput(string input) {
   if (input.empty() || input[0] == '-')
     return false;
+  size_t pos;
   try {
-    int number = stoi(input);
+    int number = stoi(input, &pos);
+    return pos == input.size();
   } catch (...) {
     return false;
   }
